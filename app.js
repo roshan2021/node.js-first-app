@@ -2,16 +2,15 @@
 //Event
 const EventEmitter = require('events');
 
-//Make instance
-const emitter = new EventEmitter();
+const Logger = require('./logger');
+const logger = new Logger();
 
 //Register a listener
-emitter.on('messageLogged', function(){
-    console.log('Listener called');
+logger.on('messageLogged', (arg) => {
+    console.log('Listener called', arg);
 });
 
-//Raise an event
-emitter.emit('messageLogged');
+logger.log('message');
 
 
 // //File System

@@ -1,13 +1,17 @@
-// console.log(__filename);
-// console.log(__dirname);
-//
-//
-// var url = 'http://mylodger.io/log';
-//
-// function log(message) {
-//     //Send an HTTP request
-//     console.log(message);
-// }
-//
-// module.exports = log;
+//Event
+const EventEmitter = require('events');
+
+var url = 'http://mylodger.io/log';
+
+class Logger extends EventEmitter {
+    log(message) {
+        //Send an HTTP request
+        console.log(message);
+
+        //Raise an event                  //Event Argument
+        this.emit('messageLogged', {id: 1, url: 'http://'});
+    }
+}
+
+module.exports = Logger;
 
