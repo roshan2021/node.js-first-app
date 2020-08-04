@@ -1,7 +1,33 @@
 
-//Path via node.js
-const path = require('path');
+//File System
+const fs = require('fs');
 
-var pathObj = path.parse(__filename);
+// const files = fs.readdirSync('./');
+// console.log(files);
 
-console.log(pathObj);
+//Asynchronous
+fs.readdir('./', function(err, files){
+    if(err) console.log('Error', err);
+    else console.log('Result', files);
+});
+
+
+// //Path via node.js
+// const path = require('path');
+//
+// var pathObj = path.parse(__filename);
+//
+// console.log(pathObj);
+
+// //Operating System
+// const os = require('os');
+//
+// var totalMemory = os.totalmem();
+// var freeMemory = os.freemem();
+//
+//
+// //Template string
+// //ES6 / ES2015 : ECMAScript 6
+//
+// console.log(`Total Memory: ${totalMemory}`);
+// console.log(`Free Memory: ${freeMemory}`);
