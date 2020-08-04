@@ -1,15 +1,30 @@
 
-//File System
-const fs = require('fs');
+//Event
+const EventEmitter = require('events');
 
-// const files = fs.readdirSync('./');
-// console.log(files);
+//Make instance
+const emitter = new EventEmitter();
 
-//Asynchronous
-fs.readdir('./', function(err, files){
-    if(err) console.log('Error', err);
-    else console.log('Result', files);
+//Register a listener
+emitter.on('messageLogged', function(){
+    console.log('Listener called');
 });
+
+//Raise an event
+emitter.emit('messageLogged');
+
+
+// //File System
+// const fs = require('fs');
+//
+// // const files = fs.readdirSync('./');
+// // console.log(files);
+//
+// //Asynchronous
+// fs.readdir('./', function(err, files){
+//     if(err) console.log('Error', err);
+//     else console.log('Result', files);
+// });
 
 
 // //Path via node.js
