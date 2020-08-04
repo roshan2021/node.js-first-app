@@ -1,14 +1,7 @@
 
+//Path via node.js
+const path = require('path');
 
-//Operating System
-const os = require('os');
+var pathObj = path.parse(__filename);
 
-var totalMemory = os.totalmem();
-var freeMemory = os.freemem();
-
-
-//Template string
-//ES6 / ES2015 : ECMAScript 6
-
-console.log(`Total Memory: ${totalMemory}`);
-console.log(`Free Memory: ${freeMemory}`);
+console.log(pathObj);
